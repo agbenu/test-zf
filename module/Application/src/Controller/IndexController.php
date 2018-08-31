@@ -7,13 +7,34 @@
 
 namespace Application\Controller;
 
+
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Application\Model\PeopleTable; 
 
 class IndexController extends AbstractActionController
 {
+
+	protected $peopleTable;
+ 	public function __construct(PeopleTable $peopleTable )
+	{
+		$this->peopleTable = $peopleTable;
+	}
+								
     public function indexAction()
     {
         return new ViewModel();
     }
+	
+	
+    public function exampleOneAction()
+    {
+    	$people = $this->peopleTable->fetchAll();
+        return new ViewModel();
+    }
+
+
+	
+		
+		
 }

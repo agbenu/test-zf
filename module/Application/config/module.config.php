@@ -27,6 +27,21 @@ return [
             'application' => [
                 'type'    => Segment::class,
                 'options' => [
+                    'route' => '/application[/:action]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]*',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],            
+            /*
+            'application' => [
+                'type'    => Segment::class,
+                'options' => [
                     'route'    => '/application[/:action]',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
@@ -34,13 +49,16 @@ return [
                     ],
                 ],
             ],
+            */
         ],
     ],
+    /*
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
         ],
-    ],
+    ],*/
+    
     'view_manager' => [
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
