@@ -17,20 +17,29 @@ class People implements  InputFilterAwareInterface
 {
     public $id;
     public  $firstname;
-					
+    public  $lastname;
+    public  $dob;
+    public  $gender;
+						
     private $inputFilter;
 	
     public function exchangeArray(array $data)
     {
         $this->id     = !empty($data['id']) ? $data['id'] : null;
-        $this->firstname = !empty($data['firstname']) ? $data['firstname'] : null;	
+        $this->first_name = !empty($data['first_name']) ? $data['first_name'] : null;	
+        $this->last_name = !empty($data['last_name']) ? $data['last_name'] : null;			
+        $this->dob = !empty($data['dob']) ? $data['dob'] : null;					
+        $this->gender = !empty($data['gender']) ? $data['gender'] : null;							
     }
             
  	// Add the following method:
     public function getArrayCopy()
     {
         return [
-			'firstname' => $this->firstname
+			'first_name' => $this->first_name,
+			'last_name' => $this->last_name,			
+			'dob' => $this->dob,			
+			'gender' => $this->gender									
         ];
     }
 

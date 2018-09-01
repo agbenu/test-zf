@@ -1,0 +1,14 @@
+<table class="table table-striped">
+<tr>
+    <th>Full name</th>
+    <th>DOB</th>
+    <th>Gender</th>    
+</tr>
+<?php foreach ($people as $person) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($person->first_name) ?> <?= $this->escapeHtml($person->last_name) ?></td>        
+		<td><?= $this->escapeHtml($person->dob) ?></td>
+		<td><?= $this->escapeHtml($person->gender) ?></td>
+    </tr>
+<?php endforeach; ?>
+</table>

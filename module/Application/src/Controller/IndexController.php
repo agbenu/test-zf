@@ -30,10 +30,19 @@ class IndexController extends AbstractActionController
     public function exampleOneAction()
     {
     	$people = $this->peopleTable->fetchAll();
-        return new ViewModel();
+        return new ViewModel([
+            'people' => $people
+        ]);		
     }
 
 
+    public function exampleTwoAction()
+    {
+    	$people = $this->peopleTable->fetchSpecificUser("Anthony","Agbenu");
+        return new ViewModel([
+            'people' => $people
+        ]);		
+    }
 	
 		
 		

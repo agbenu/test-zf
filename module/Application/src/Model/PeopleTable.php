@@ -33,7 +33,10 @@ class PeopleTable
 
     }
 
-
+	public function	fetchSpecificUser($first_name,$last_name)
+	{
+        return $this->tableGateway->select(['first_name'=>$first_name, 'last_name'=>$last_name ]);				
+	}
  
     public function getPeople($id)
     {
