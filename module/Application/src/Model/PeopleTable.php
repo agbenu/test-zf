@@ -4,16 +4,9 @@ namespace Application\Model;
 
 use RuntimeException;
 use Zend\Db\TableGateway\TableGatewayInterface;
-use Zend\Db\Sql\Expression;
 
-use Zend\Paginator\Adapter\DbSelect;
- use Zend\Paginator\Paginator;
  
- use Zend\Db\ResultSet\ResultSet;
- use Zend\Db\TableGateway\TableGateway;
- use Zend\Db\Sql\Select;
- use Zend\Db\TableGateway\AbstractTableGateway;
-use Zend\Db\Adapter\Adapter;
+
 
 class PeopleTable
 {
